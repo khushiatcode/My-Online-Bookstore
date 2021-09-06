@@ -1,0 +1,279 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Space+Mono');
+
+.cal
+{
+    font-family: 'Space Mono';
+}
+
+
+    input[type="button"]
+    {
+       border-radius: 20px;
+
+       border-color: #8798e9;
+       color: black;
+       background-color: #D1D8FD;
+       width: 100%;
+       height: 100%;  
+    }
+
+    input[type="text"]
+    {
+       border-radius: 8px;
+       border-color: #8798e9;
+       color: black;
+       background-color:  #D1D8FD;
+       width: 96%; 
+    }
+
+    input[type="button"]:hover
+    {
+       border-radius: 8px;
+       border-color: #68719e;
+       color: black;
+       background-color: #8a8ea3;
+       width: 100%; 
+    }
+    
+</style>
+<script>
+    function clr() 
+    {
+        document.getElementById('display') .value="";
+    }
+    function data(val)
+    {
+        document.getElementById('display') .value+=val;
+    }
+    function calculate()
+    {
+        var x=document.getElementById('display').value;
+        document.getElementById('display').value=eval(x);    
+    }
+
+</script>
+</head>
+
+<body background="back 2.jpg">
+
+<div class="cal">
+    <centre>
+    <h1>CALCULATOR</h1>
+    <table>
+
+        <tr>
+            <td><input type="button" value="C" onclick="clr()" style="padding-left:20px;padding-right:20px"/></td>
+            <td colspan="3"> <input type="text" id="display" disabled></td>
+        </tr>
+
+        <tr>
+            <td><input cl type="button" value="+" onclick="data('+')"/></td>
+            <td><input type="button" value="1" onclick="data('1')"/></td>
+            <td><input type="button" value="2" onclick="data('2')"/></td>
+            <td><input type="button" value="3" onclick="data('3')"/></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="-" onclick="data('-')"/></td>
+            <td><input type="button" value="4" onclick="data('4')"/></td>
+            <td><input type="button" value="5" onclick="data('5')"/></td>
+            <td><input type="button" value="6" onclick="data('6')"/></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="*" onclick="data('*')"/></td>
+            <td><input type="button" value="7" onclick="data('7')"/></td>
+            <td><input type="button" value="8" onclick="data('8')"/></td>
+            <td><input type="button" value="9" onclick="data('9')"/></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="/" onclick="data('/')"/></td>
+            <td><input type="button" value="." onclick="data('.')"/></td>
+            <td><input type="button" value="0" onclick="data('0')"/></td>
+            <td><input type="button" value="=" onclick="calculate()"/></td>
+        </tr>
+    </table>
+    </centre>
+</div>
+</body>
+</html> -->
+<html>
+<div class="box">
+    <div class="display"><input type="text" readonly size="18" id="d"></div>
+    <div class="keys">
+        <p><input type="button" class="button gray" 
+        value="mrc" onclick='c'><input type="button" class="button gray" 
+        value="m-" onclick='c'>
+        <input type="button" class="button gray" value="m+" onclick='c'><input type="button" class="button pink" 
+        value="/" onclick='v("/")'></p>
+        <p><input type="button" class="button black" 
+        value="7" onclick='v("7")'><input type="button" 
+        class="button black" value="8" onclick='v("8")'>
+        <input type="button" class="button black" value="9" 
+        onclick='v("9")'><input type="button" 
+        class="button pink" value="*" onclick='v("*")'></p>
+        <p><input type="button" class="button black" 
+        value="4" onclick='v("4")'><input type="button" 
+        class="button black" value="5" onclick='v("5")'>
+        <input type="button" class="button black" value="6" 
+        onclick='v("6")'><input type="button" 
+        class="button pink" value="-" onclick='v("-")'></p>
+        <p><input type="button" class="button black" 
+        value="1" onclick='v("1")'><input type="button" 
+        class="button black" value="2" onclick='v("2")'>
+        <input type="button" class="button black" value="3" 
+        onclick='v("3")'><input type="button" 
+        class="button pink" value="+" onclick='v("+")'></p>
+        <p><input type="button" class="button black" 
+        value="0" onclick='v("0")'><input type="button" 
+        class="button black" value="." onclick='v(".")'>
+        <input type="button" class="button black" value="C" 
+        onclick='c("")'><input type="button" 
+        class="button orange" value="=" onclick='e()'></p>
+    </div>
+    </div>
+
+<head> 
+    <title>Calculator</title>
+    <style>
+        body
+.box
+{
+background-color:#a1a1aa;
+height:300px;
+width:250px;
+border-radius:10px;
+position:relative;
+top:80px;
+left:40%;
+} 
+
+.display
+{
+background-color:#222;
+width:220px;
+position:relative;
+left:15px;
+top:20px;
+height:40px;
+}
+.display input
+{
+position:relative;
+left:5px;
+top:3px;
+bottom: 3px;
+height:35px;
+color:black;
+background-color:#bccd95;
+font-size:18px;
+text-align:right;
+}
+
+.keys
+{
+position:relative;
+top:15px;
+}
+.button
+{
+width:40px;
+height:30px;
+border:none;
+border-radius:8px;
+margin-left:17px;
+cursor:pointer;
+border-top:2px solid transparent;
+}
+.button.gray
+{
+color:white;
+background-color:#6f6f6f;
+border-bottom:black 2px solid;
+border-top:2px #6f6f6f solid;
+}
+.button.pink
+{
+color:rgb(255, 255, 255);
+background-color:#343241;
+border-bottom:black 2px solid;
+}
+.button.black
+{
+color:white;
+background-color:303030;
+border-bottom:black 2px solid;
+border-top:2px 303030 solid;
+}
+.button.orange
+{
+color:rgb(255, 255, 255);
+background-color:#343241;
+border-bottom:black 2px solid;
+border-top:2px FF9933 solid;
+}
+.gray:active
+{
+border-top:black 2px solid;
+border-bottom:2px #6f6f6f solid;
+}
+.pink:active
+{
+border-top:black 2px solid;
+border-bottom:#ff4561 2px solid;
+}
+.black:active
+{
+border-top:black 2px solid;
+border-bottom:#303030 2px solid;
+}
+.orange:active
+{
+border-top:black 2px solid;
+border-bottom:FF9933 2px solid;
+}
+p
+{
+line-height:10px;
+}
+</style>
+
+<script>
+    function c(val)
+{
+document.getElementById("d").value=val;
+}
+function v(val)
+{
+document.getElementById("d").value+=val;
+}
+function e() 
+{ 
+try 
+{ 
+  c(eval(document.getElementById("d").value)) 
+} 
+catch(e) 
+{
+  c('Error') 
+} 
+}
+</script>
+</head>  
+<body background="back 2.jpg">
+    
+</body>
+</html>
+
+
